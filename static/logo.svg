@@ -1,4 +1,4 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="-16 -16 272 272">
   <rect fill="#333333" x="0" y="0" rx="16" ry="16" width="256" height="256" mask="url(#mask)" />
   <mask id="mask">
     <rect fill="white" x="0" y="0" rx="16" ry="16" width="256" height="256" />
