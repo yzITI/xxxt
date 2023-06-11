@@ -1,16 +1,22 @@
 <script>
   import { user, point } from '$lib/stores.js'
   import { goto } from '$app/navigation'
-  import { browser } from '$app/environment'
   import { AIcon } from 'ace.svelte'
   import { mdiCardAccountDetailsOutline, mdiPresentation, mdiForumOutline, mdiTooltipQuestionOutline, mdiCodeTags, mdiAlertCircleOutline, mdiGiftOutline, mdiQrcodeScan, mdiTuneVertical } from '@mdi/js'
   import swal from 'sweetalert2'
+  import srpc from '$lib/utilities/srpc.js'
 
-  let developer = false
-  if (browser) {
-    developer = window.localStorage.developer
-    if (!$user.id) goto('/')
+  srpc('https://a.aauth.link/aichat')
+
+  const developer = window.localStorage.developer
+  if (!$user.id) goto('/')
+
+  async function init () {
+    point.set('Loading...')
+    const res = await srpc.point($user.token)
+    point.set(typeof res === 'number' ? res : Infinity)
   }
+  init()
 
   const showID = () => swal.fire({
     showConfirmButton: false,
