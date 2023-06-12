@@ -41,7 +41,7 @@
     icon: mdiPresentation,
     action: () => window.open('https://s.yzzx.org/slide/#/view/xxxt?name=' + $user.name)
   }, {
-    title: 'AI助教',
+    title: 'AI对话',
     icon: mdiForumOutline,
     action: () => gotoWithPoint('/chat')
   }, {

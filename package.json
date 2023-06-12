@@ -19,6 +19,7 @@
 	"type": "module",
 	"dependencies": {
 		"ace.svelte": "^0.0.1",
+		"micromark": "^3.2.0",
 		"sweetalert2": "^11.7.12"
 	}
 }
