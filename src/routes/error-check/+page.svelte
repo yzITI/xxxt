@@ -3,7 +3,7 @@
   import srpc from '$lib/utilities/srpc.js'
   import { micromark } from 'micromark'
   import { point, user } from '$lib/stores.js'
-  import { AIcon, AButton } from 'ace.svelte'
+  import { AIcon } from 'ace.svelte'
   import { mdiTranslate } from '@mdi/js'
 
   srpc('https://a.aauth.link/aichat')

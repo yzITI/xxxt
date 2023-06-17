@@ -24,7 +24,7 @@
   async function analyze () {
     if (!ready || loading) return
     loading = true
-    const msgs = [{ role: 'system', content: 'find errors without code or explanation' + (lang ? ' in Chinese' : '') }, { role: 'user', content: input }]
+    const msgs = [{ role: 'user', content: input }]
     const res = await srpc.chat($user?.token, msgs)
     loading = false
     if (res.err) return swal.fire('Error', res.err, 'error')
@@ -37,18 +37,18 @@
 
 <div class="w-full min-h-screen p-4 sm:p-10 bg-gray-100">
   <h1 class="font-bold text-3xl flex items-center justify-between">
-    <span>{lang ? '代码检查' : 'Code Check'}</span>
+    <span>{lang ? '通用答疑' : 'General Question'}</span>
     <button on:click={() => { lang = !lang }}>
       <AIcon path={mdiTranslate} size="2rem" color="#333333" />
     </button>
   </h1>
-  <p class="text-gray-500 my-2">{lang ? '请将需要检查的代码复制到下面的输入框中' : 'Please paste your code in the input box below'}</p>
+  <p class="text-gray-500 my-2">{lang ? '请在下面的框中输入您的问题' : 'Please input your question in the box below'}</p>
   <textarea class="block p-2 font-mono border w-full resize-none text-sm" rows="20" bind:value={input}></textarea>
   {#if loading}
     <p class="m-2">Loading...</p>
   {:else if html}
     <div class="shadow border rounded my-2 p-4 bg-white">
-      <h4 class="font-bold text-xl">{lang ? '检查结果' : 'Result'}</h4>
+      <h4 class="font-bold text-xl">{lang ? '解答' : 'Response'}</h4>
       <hr class="my-1">
       <p class="text-gray-500 text-xs font-mono mb-3">Points: {pointUsed} used, {$point} left.</p>
       {@html html}
