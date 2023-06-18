@@ -12,9 +12,9 @@
   if (!$user.id) goto('/')
 
   async function init () {
-    point.set('Loading...')
+    $point = 'Loading...'
     const res = await srpc.point($user.token)
-    point.set(typeof res === 'number' ? res : Infinity)
+    $point = typeof res === 'number' ? res : Infinity
   }
   init()
 

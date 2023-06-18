@@ -31,7 +31,7 @@
     const r = res.choices[0].message.content.trim()
     html = micromark(r)
     pointUsed = res.usage
-    point.set(typeof res.point === 'number' ? res.point : Infinity)
+    $point = typeof res.point === 'number' ? res.point : Infinity
   }
 </script>
 

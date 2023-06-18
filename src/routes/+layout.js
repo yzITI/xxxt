@@ -21,4 +21,5 @@ export function load () {
     return
   }
   user.set({ ...payload, token })
+  return { user: { ...payload, token } }
 }

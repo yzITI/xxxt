@@ -57,7 +57,7 @@
   }
 </script>
 
-<div class={bg + ' w-full h-screen relative all-transition flex items-center justify-center'}>
+<div class={bg + ' w-full h-screen relative transition-all flex items-center justify-center'}>
   <video bind:this={video}></video>
-  <button class="absolute right-4 bottom-6 rounded-full py-2 px-4 font-bold text-xl text-white bg-blue-500 flex items-center all-transition shadow hover:shadow-md" on:click={complete} title="copy to clipboard"><code class="mx-2">{Object.keys(result).length}</code><AIcon path={mdiContentCopy} size="2rem" color="white" /></button>
+  <button class="absolute right-4 bottom-6 rounded-full py-2 px-4 font-bold text-xl text-white bg-blue-500 flex items-center transition-all shadow hover:shadow-md" on:click={complete} title="copy to clipboard"><code class="mx-2">{Object.keys(result).length}</code><AIcon path={mdiContentCopy} size="2rem" color="white" /></button>
 </div>

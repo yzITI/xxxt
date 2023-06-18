@@ -18,7 +18,7 @@
     loading = true
     await srpc.grant($user?.token, us, value)
     loading = false
-    point.set(typeof res.point === 'number' ? $point - us.length * value : Infinity)
+    $point -= us.length * value
     return swal.fire('成功', '', 'success')
   }
 
@@ -42,9 +42,9 @@
     <p class="m-4">Loading...</p>
   {:else}
     <div class="flex items-center">
-      <button on:click={submit} class="bg-blue-500 text-white px-3 py-1 m-4 rounded all-transition shadow hover:shadow-md self-start font-bold">分配点数</button>
+      <button on:click={submit} class="bg-blue-500 text-white px-3 py-1 m-4 rounded transition-all shadow hover:shadow-md self-start font-bold">分配点数</button>
       {#if $user.id === 'root'}
-        <button on:click={del} class="bg-red-500 text-white px-3 py-1 m-4 rounded all-transition shadow hover:shadow-md self-start font-bold">清空点数</button>
+        <button on:click={del} class="bg-red-500 text-white px-3 py-1 m-4 rounded transition-all shadow hover:shadow-md self-start font-bold">清空点数</button>
       {/if}
     </div>
   {/if}
