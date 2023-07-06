@@ -2,7 +2,7 @@
   import { user, point } from '$lib/stores.js'
   import { goto } from '$app/navigation'
   import { AIcon } from 'ace.svelte'
-  import { mdiCardAccountDetailsOutline, mdiPresentation, mdiForumOutline, mdiTooltipQuestionOutline, mdiCodeTags, mdiAlertCircleOutline, mdiGiftOutline, mdiQrcodeScan, mdiTuneVertical } from '@mdi/js'
+  import { mdiCardAccountDetailsOutline, mdiPresentation, mdiForumOutline, mdiTooltipQuestionOutline, mdiCodeTags, mdiAlertCircleOutline, mdiGiftOutline, mdiQrcodeScan, mdiTuneVertical, mdiFileDocumentEditOutline } from '@mdi/js'
   import swal from 'sweetalert2'
   import srpc from '$lib/utilities/srpc.js'
 
@@ -32,10 +32,16 @@
     goto(route)
   }
 
+  const base64url = s => btoa(String.fromCharCode(...new TextEncoder('utf-8').encode(s))).replaceAll('/', '_').replaceAll('+', '-').replaceAll('=', '')
+
   const buttonList = [{
     title: '我的ID',
     icon: mdiCardAccountDetailsOutline,
     action: showID
+  }, {
+    title: '报名入口',
+    icon: mdiFileDocumentEditOutline,
+    action: () => window.open('https://tool.njsc.ltd/#/run/it329rn9q2l6zbbS?simple=1&state=' + base64url(JSON.stringify({ name: $user.name, id: $user.id })))
   }, {
     title: '课堂课件',
     icon: mdiPresentation,
