@@ -3,7 +3,7 @@
   import srpc from '$lib/utilities/srpc.js'
   import { point, user } from '$lib/stores.js'
 
-  srpc('https://a.aauth.link/aichat')
+  srpc('https://a.njsc.ltd/aichat')
 
   let value = 0
   let users = ''

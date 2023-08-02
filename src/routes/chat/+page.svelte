@@ -5,7 +5,7 @@
   import { sendIn, setListener } from '$lib/utilities/iframe.js'
   import { fade } from 'svelte/transition';
   
-  srpc('https://a.aauth.link/aichat')
+  srpc('https://a.njsc.ltd/aichat')
 
   let iframe = null, loading = false
   const msgs = [{ role: 'system', content: '你是信息学堂AI助教，简短回答问题' }]

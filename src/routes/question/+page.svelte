@@ -6,7 +6,7 @@
   import { AIcon } from 'ace.svelte'
   import { mdiTranslate } from '@mdi/js'
 
-  srpc('https://a.aauth.link/aichat')
+  srpc('https://a.njsc.ltd/aichat')
 
   let lang = false // en: false, zh: true
   let ready = false, loading = false

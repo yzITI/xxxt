@@ -6,7 +6,7 @@
   import swal from 'sweetalert2'
   import srpc from '$lib/utilities/srpc.js'
 
-  srpc('https://a.aauth.link/aichat')
+  srpc('https://a.njsc.ltd/aichat')
 
   const developer = window.localStorage.developer
   if (!$user.id) goto('/')
