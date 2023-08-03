@@ -5,7 +5,7 @@
   import swal from 'sweetalert2'
 
   function login () {
-    window.location.href = 'https://cn.njsc.ltd/#/launch/xxxt'
+    window.location.href = 'https://cn.aauth.link/#/launch/xxxt'
   }
 
   let cot = 0
